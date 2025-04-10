@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "First Post",
+    "content": "This is the first post",
+    "createdAt": "2021-01-01",
+    "updatedAt": "2021-01-01"
+  },
+  {
+    "id": 2,
+    "title": "Second Post",
+    "content": "This is the second post",
+    "createdAt": "2021-01-02",
+    "updatedAt": "2021-01-02"
+  },
+  {
+    "id": 3,
+    "title": "11",
+    "content": "222",
+    "createdAt": "2025-04-10T03:36:16.018Z",
+    "updatedAt": "2025-04-10T03:36:16.018Z"
+  },
+  {
+    "id": 4,
+    "title": "33",
+    "content": "44",
+    "createdAt": "2025-04-10T03:39:03.882Z",
+    "updatedAt": "2025-04-10T03:39:03.882Z"
+  },
+  {
+    "id": 5,
+    "title": "123",
+    "content": "123",
+    "createdAt": "2025-04-10T03:39:39.663Z",
+    "updatedAt": "2025-04-10T03:39:39.664Z"
+  }
+]
