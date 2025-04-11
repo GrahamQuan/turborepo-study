@@ -1,7 +1,12 @@
 import { Router } from 'express';
-import posts from '../data/post.json' assert { type: 'json' };
 import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const postsPath = path.join(__dirname, '../data/post.json');
+const postsData = JSON.parse(await fs.readFile(postsPath, 'utf-8'));
+const posts = postsData;
 
 const router: Router = Router();
 
@@ -20,10 +25,7 @@ router.post('/posts', async (req, res) => {
   };
   posts.push(newPost);
 
-  await fs.writeFile(
-    path.join(import.meta.dirname, '../data/post.json'),
-    JSON.stringify(posts, null, 2)
-  );
+  await fs.writeFile(postsPath, JSON.stringify(posts, null, 2));
 
   res.status(201).json(newPost);
 });
