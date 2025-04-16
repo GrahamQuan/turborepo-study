@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "API for the application",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
@@ -23,5 +23,6 @@
     "@workspace/typescript-config": "workspace:*",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3"
-  }
+  },
+  "packageManager": "pnpm@9.14.2"
 }

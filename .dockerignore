@@ -1,0 +1,12 @@
+Dockerfile
+.dockerignore
+**/node_modules
+**/dist
+**/out
+.turbo/
+.next/
+.vercel/
+.git/
+*.log
+.pnpm-store
+.DS_Store

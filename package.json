@@ -7,15 +7,21 @@
     "test": "turbo run test",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "check-types": "turbo run check-types",
+    "docker:api": "docker build -t api -f apps/api/Dockerfile .",
+    "docker:api:run": "docker run -p 4000:4000 api",
+    "docker:web": "docker build -t web -f apps/web/Dockerfile .",
+    "docker:web:run": "docker run -p 3001:3001 web",
+    "docker:compose:up": "docker compose up -d",
+    "docker:compose:down": "docker compose down"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
     "turbo": "^2.5.0",
     "typescript": "5.8.2"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@9.14.2",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }
