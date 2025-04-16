@@ -1,10 +1,14 @@
+version: '3.2'
+
 services:
   api:
     build:
       context: .
       dockerfile: apps/api/Dockerfile
     ports:
-      - "4000:4000"
+      - "${API_PORT:-4000}:4000"
+    # env_file:
+    #   - ./apps/api/.env
     environment:
       - NODE_ENV=production
 
@@ -13,7 +17,9 @@ services:
       context: .
       dockerfile: apps/web/Dockerfile
     ports:
-      - "3001:3001"
+      - "${WEB_PORT:-3001}:3000"
+    env_file:
+      - ./apps/web/.env
     environment:
       - NODE_ENV=production
     depends_on:
