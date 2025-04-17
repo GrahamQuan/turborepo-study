@@ -1,0 +1,31 @@
+{
+  "name": "@workspace/design-system",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
+    "dev:theme": "tailwindcss -i ./src/theme.css -o ./dist/theme.css --watch",
+    "dev": "pnpm run \"/^dev:.*/\" --parallel",
+    "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/styles.css",
+    "build:theme": "tailwindcss -i ./src/theme.css -o ./dist/theme.css",
+    "build": "pnpm run \"/^build:.*/\"",
+    "type-check": "tsc --noEmit"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./theme.css": "./dist/theme.css",
+    "./styles.css": "./dist/styles.css"
+  },
+  "dependencies": {
+    "tailwindcss": "catalog:"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "catalog:",
+    "@tailwindcss/postcss": "catalog:"
+  }
+}
