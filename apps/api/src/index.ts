@@ -2,7 +2,7 @@ import app from './app.js';
 import router from './router/posts.js';
 
 app.get('/health', (req, res) => {
-  res.status(200).json({ message: 'OK' });
+  res.status(200).send('OK');
 });
 
 app.use('/api', router);
