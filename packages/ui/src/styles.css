@@ -1,4 +1,2 @@
 @import 'tailwindcss';
-/* @import '@workspace/design-system/styles.css'; */
-/* @import '@workspace/design-system/theme.css'; */
 @source "../**/*.{ts,tsx}";
