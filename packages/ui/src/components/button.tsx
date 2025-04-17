@@ -10,7 +10,7 @@ export function Button({
   return (
     <button
       type={props.type || 'button'}
-      className={`text-white font-bold px-3 py-2 rounded-lg bg-yellow-500 ${className}`}
+      className={`text-white font-bold px-3 py-2 rounded-lg bg-rose-500 ${className}`}
       // className={`text-white px-3 py-2 rounded-lg bg-primary ${className}`}
       {...props}
     >
