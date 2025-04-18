@@ -1,2 +1,6 @@
 @import 'tailwindcss';
 @import '@workspace/ui/styles.css';
+
+html {
+  font-family: var(--font-geist-sans);
+}
