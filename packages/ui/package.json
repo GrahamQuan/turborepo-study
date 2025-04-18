@@ -6,31 +6,36 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit",
-    "build": "tsc"
+    "check-types": "tsc --noEmit"
   },
   "sideEffects": [
     "**/*.css"
   ],
   "exports": {
     "./components/*": "./src/components/*.tsx",
-    "./styles.css": "./src/styles.css",
+    "./components.css": "./src/styles/components.css",
     "./postcss.config": "./postcss.config.mjs"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "catalog:",
+    "@tailwindcss/postcss": "catalog:",
     "@turbo/gen": "^2.5.0",
     "@types/node": "^22.14.0",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "@workspace/eslint-config": "workspace:*",
-    "@workspace/typescript-config": "workspace:*",
-    "@tailwindcss/cli": "catalog:",
-    "@tailwindcss/postcss": "catalog:"
+    "@workspace/typescript-config": "workspace:*"
   },
   "dependencies": {
-    "tailwindcss": "catalog:",
+    "@radix-ui/react-slot": "^1.2.0",
     "@workspace/design-system": "workspace:*",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.488.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "catalog:",
+    "tw-animate-css": "^1.2.5"
   }
 }

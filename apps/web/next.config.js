@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  transpilePackages: ['@workspace/ui'],
+};
 
 if (process.env.NODE_ENV === 'production') {
   nextConfig.output = 'standalone';
