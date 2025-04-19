@@ -6,14 +6,19 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "dev": "tsup --watch",
+    "build": "tsup"
   },
   "sideEffects": [
     "**/*.css"
   ],
   "exports": {
-    "./components/*": "./src/components/*.tsx",
-    "./components.css": "./src/styles/components.css",
+    "./components/*": {
+      "default": "./dist/components/*.js",
+      "types": "./src/components/*.tsx"
+    },
+    "./components.css": "./dist/styles/components.css",
     "./postcss.config": "./postcss.config.mjs"
   },
   "devDependencies": {

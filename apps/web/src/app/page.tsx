@@ -2,6 +2,7 @@ import Card from '@/componnets/card';
 import InputForm from '../componnets/input-form';
 import PostList from '../componnets/post-list';
 import PinIcon from '@/icons/map-pin.svg';
+import { Code } from '@workspace/ui/components/code';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </div>
       <Card className='text-sky-500'>
         <h2>Card</h2>
+        <Code className='text-sky-500'>Code</Code>
       </Card>
       <InputForm />
       <PostList />
