@@ -4,17 +4,10 @@
     "outDir": "dist",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "declaration": false,
-    "declarationMap": false,
-    "esModuleInterop": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  },
-  "ts-node": {
-    "esm": true
+    "declaration": false,
+    "declarationMap": false
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "migrations"]
 }

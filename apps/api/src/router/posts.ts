@@ -1,33 +1,22 @@
 import { Router } from 'express';
-import fs from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const postsPath = path.join(__dirname, '../data/post.json');
-const postsData = JSON.parse(await fs.readFile(postsPath, 'utf-8'));
-const posts = postsData;
+import { db, posts } from '@workspace/db';
 
 const router: Router = Router();
 
-router.get('/posts', (req, res) => {
-  res.json(posts);
+router.get('/posts', async (req, res) => {
+  const postsList = await db.select().from(posts);
+  res.json(postsList);
 });
 
 router.post('/posts', async (req, res) => {
   const { title, content } = req.body;
-  const newPost = {
-    id: posts.length + 1,
-    title,
-    content,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  };
-  posts.push(newPost);
 
-  await fs.writeFile(postsPath, JSON.stringify(posts, null, 2));
-
-  res.status(201).json(newPost);
+  try {
+    const newPost = await db.insert(posts).values({ title, content });
+    res.status(201).json(newPost);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to create post' });
+  }
 });
 
 export default router;
