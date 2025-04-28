@@ -18,7 +18,7 @@ export default async function PostList() {
         tags: ['posts'],
       },
       // Remove cache: no-store as we've marked the component as dynamic
-      signal: AbortSignal.timeout(3000),
+      signal: AbortSignal.timeout(10000),
     });
 
     if (res.ok) {
