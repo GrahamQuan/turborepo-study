@@ -2,8 +2,8 @@
   "extends": "@workspace/typescript-config/base.json",
   "compilerOptions": {
     "outDir": "dist",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "baseUrl": ".",
     "declaration": false,
     "declarationMap": false
